@@ -15,6 +15,10 @@ const toggleCheckbox = (editor: Editor, char: string) => {
 
 		editor.setLine(cursor.line, newLine);
 		editor.setCursor(cursor)
+	} else {
+		const newLine = `- [${char}] ${line}`;
+		editor.setLine(cursor.line, newLine);
+		editor.setCursor(cursor.line)
 	}
 }
 
