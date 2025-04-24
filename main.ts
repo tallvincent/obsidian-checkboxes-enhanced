@@ -1,22 +1,12 @@
-import { App, Editor, Plugin, PluginSettingTab, Setting } from 'obsidian';
-
-interface MyPluginSettings {
-	mySetting: string;
-}
-
-const DEFAULT_SETTINGS: MyPluginSettings = {
-	mySetting: 'default'
-}
+import { Editor, Plugin } from 'obsidian';
 
 const toggleCheckbox = (editor: Editor, char: string) => {
 	const cursor = editor.getCursor();
 	const line = editor.getLine(cursor.line);
-	console.log(line)
 
 	// Regex to match a checkbox
 	const checkboxRegex = /- \[([^\]]+)\]/;
 	const match = line.match(checkboxRegex);
-	console.log(match)
 
 	if (match) {
 		const currentState = match[1];
@@ -28,12 +18,8 @@ const toggleCheckbox = (editor: Editor, char: string) => {
 	}
 }
 
-export default class MyPlugin extends Plugin {
-	settings: MyPluginSettings;
-
+export default class EnhancedCheckboxes extends Plugin {
 	async onload() {
-		await this.loadSettings();
-
 		this.addCommand({
 			id: 'toggle-checkbox-incomplete',
 			name: 'Toggle Checkbox Incomplete',
@@ -154,46 +140,7 @@ export default class MyPlugin extends Plugin {
 			editorCallback: (editor: Editor) => toggleCheckbox(editor, 'd')
 		});
 
-		// This adds a settings tab so the user can configure various aspects of the plugin
-		this.addSettingTab(new SampleSettingTab(this.app, this));
-
 		// When registering intervals, this function will automatically clear the interval when the plugin is disabled.
 		this.registerInterval(window.setInterval(() => console.log('setInterval'), 5 * 60 * 1000));
-	}
-
-	onunload() { }
-
-	async loadSettings() {
-		this.settings = Object.assign({}, DEFAULT_SETTINGS, await this.loadData());
-	}
-
-	async saveSettings() {
-		await this.saveData(this.settings);
-	}
-}
-
-class SampleSettingTab extends PluginSettingTab {
-	plugin: MyPlugin;
-
-	constructor(app: App, plugin: MyPlugin) {
-		super(app, plugin);
-		this.plugin = plugin;
-	}
-
-	display(): void {
-		const { containerEl } = this;
-
-		containerEl.empty();
-
-		new Setting(containerEl)
-			.setName('Setting #1')
-			.setDesc('It\'s a secret')
-			.addText(text => text
-				.setPlaceholder('Enter your secret')
-				.setValue(this.plugin.settings.mySetting)
-				.onChange(async (value) => {
-					this.plugin.settings.mySetting = value;
-					await this.plugin.saveSettings();
-				}));
 	}
 }
