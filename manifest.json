@@ -1,11 +1,10 @@
 {
-	"id": "obsidian-checkboxes-enhanced",
+	"id": "checkboxes-enhanced",
 	"name": "Checkboxes Enhanced",
 	"version": "1.0.0",
 	"minAppVersion": "0.15.0",
 	"description": "Enhances checkbox use with more hotkeys",
 	"author": "tallvincent",
 	"authorUrl": "https://tallvincent.com",
-	"fundingUrl": "https://obsidian.md/pricing",
 	"isDesktopOnly": true
 }
