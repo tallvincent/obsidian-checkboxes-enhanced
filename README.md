@@ -7,7 +7,7 @@
 
 When your cursor is on a line with a checkbox, it will toggle between incomplete - `- [ ]` - and the state specified in the action you select.
 
-![[demo.gif]]
+![](demo.gif)
 
 The following commands are available:
 
