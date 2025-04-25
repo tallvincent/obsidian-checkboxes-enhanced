@@ -12,26 +12,26 @@ When your cursor is on a line with a checkbox, it will toggle between incomplete
 The following commands are available:
 
 ```
-obsidian-checkboxes-enhanced:toggle-checkbox-incomplete
-obsidian-checkboxes-enhanced:toggle-checkbox-canceled
-obsidian-checkboxes-enhanced:toggle-checkbox-forwarded
-obsidian-checkboxes-enhanced:toggle-checkbox-scheduling
-obsidian-checkboxes-enhanced:toggle-checkbox-question
-obsidian-checkboxes-enhanced:toggle-checkbox-important
-obsidian-checkboxes-enhanced:toggle-checkbox-star
-obsidian-checkboxes-enhanced:toggle-checkbox-quote
-obsidian-checkboxes-enhanced:toggle-checkbox-location
-obsidian-checkboxes-enhanced:toggle-checkbox-bookmark
-obsidian-checkboxes-enhanced:toggle-checkbox-information
-obsidian-checkboxes-enhanced:toggle-checkbox-savings
-obsidian-checkboxes-enhanced:toggle-checkbox-idea
-obsidian-checkboxes-enhanced:toggle-checkbox-pro
-obsidian-checkboxes-enhanced:toggle-checkbox-con
-obsidian-checkboxes-enhanced:toggle-checkbox-fire
-obsidian-checkboxes-enhanced:toggle-checkbox-key
-obsidian-checkboxes-enhanced:toggle-checkbox-win
-obsidian-checkboxes-enhanced:toggle-checkbox-up
-obsidian-checkboxes-enhanced:toggle-checkbox-down
+checkboxes-enhanced:toggle-checkbox-incomplete
+checkboxes-enhanced:toggle-checkbox-canceled
+checkboxes-enhanced:toggle-checkbox-forwarded
+checkboxes-enhanced:toggle-checkbox-scheduling
+checkboxes-enhanced:toggle-checkbox-question
+checkboxes-enhanced:toggle-checkbox-important
+checkboxes-enhanced:toggle-checkbox-star
+checkboxes-enhanced:toggle-checkbox-quote
+checkboxes-enhanced:toggle-checkbox-location
+checkboxes-enhanced:toggle-checkbox-bookmark
+checkboxes-enhanced:toggle-checkbox-information
+checkboxes-enhanced:toggle-checkbox-savings
+checkboxes-enhanced:toggle-checkbox-idea
+checkboxes-enhanced:toggle-checkbox-pro
+checkboxes-enhanced:toggle-checkbox-con
+checkboxes-enhanced:toggle-checkbox-fire
+checkboxes-enhanced:toggle-checkbox-key
+checkboxes-enhanced:toggle-checkbox-win
+checkboxes-enhanced:toggle-checkbox-up
+checkboxes-enhanced:toggle-checkbox-down
 ```
 
 You can assign each action to a hotkey within the Obsidian settings.
@@ -42,7 +42,7 @@ For example, the following keybind to toggle a "canceled" checkbox:
 
 ```.vimrc
 unmap <Space> " Must unmap space to use it as a leader key
-exmap toggleCanceled obcommand obsidian-checkboxes-enhanced:toggle-checkbox-canceled
+exmap toggleCanceled obcommand checkboxes-enhanced:toggle-checkbox-canceled
 nmap <Space>tc :toggleCanceled<CR>
 ```
 
